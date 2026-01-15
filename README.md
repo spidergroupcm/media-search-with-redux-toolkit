@@ -1,16 +1,66 @@
-# React + Vite
+# 📸 MediaSearch Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](http://media-search-project-369.surge.sh)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
 
-Currently, two official plugins are available:
+MediaSearch Hub is a modern, high-performance media discovery web application that allows users to search high-quality photos and trending GIFs from multiple platforms in one unified interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 Live Demo  
+http://media-search-project-369.surge.sh
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔍 Unified search across Unsplash, Pexels, and Tenor
+- ⚡ Fast and efficient data fetching using Redux Toolkit and Axios
+- 📱 Fully responsive layout for desktop, tablet, and mobile
+- 🎭 Millions of trending GIFs powered by the Tenor API
+- 🖼️ Premium stock photos from Unsplash and Pexels
+- 🌑 Clean, modern UI with smooth animations and hover effects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+Frontend
+
+- React (Hooks, Functional Components)
+
+State Management
+
+- Redux Toolkit (Slices, Async Thunks)
+
+Styling
+
+- Tailwind CSS
+
+HTTP Client
+
+- Axios
+
+Deployment
+
+- Surge
+
+---
+
+## 🔌 API Integration
+
+This project integrates three powerful media APIs:
+
+1. Unsplash API  
+   High-resolution, professional photography  
+   https://unsplash.com/developers
+
+2. Pexels API  
+   Free stock photos and videos  
+   https://www.pexels.com/api/
+
+3. Tenor API  
+   Trending and searchable GIFs  
+   https://tenor.com/gifapi
+
+---
