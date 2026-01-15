@@ -1,24 +1,31 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setActivetab } from "../redux/fetchers/searchClice";
 
+import { useDispatch, useSelector } from 'react-redux'
+import { setActiveTabs } from '../redux/features/searchSlice'
 
 const Tabs = () => {
-  const tabs = ["photos", "videos", "gifs"]
-  const dispatch = useDispatch()
-  const state = useSelector((state)=>state.search.activeTab)
-  return (
-    <div className="flex gap-2">
-    {
-      tabs.map((item,i)=>{
-        return <button className={`${(state===item?"bg-green-400":"bg-gray-400")} px-4 py-2 rounded border active:scale-75`} key={i}
-        onClick={()=>{
-          dispatch(setActivetab(item))
-        }}
-        >{item}</button>
-      })
-    }
-    </div>
-  );
-};
+    const tabs = ['photos', 'videos', 'gif']
 
-export default Tabs;
+    const dispatch = useDispatch()
+
+    const activeTab = useSelector((state)=>state.search.activeTab)
+
+    return (
+        <div className='flex gap-5 p-10'>
+            {tabs.map(function (elem, idx) {
+                return (
+                    <button
+                        className={`${(activeTab==elem?'bg-blue-700':'bg-gray-500')} transition cursor-pointer active:scale-95 px-5 py-2 rounded uppercase`}
+                        key={idx}
+                        onClick={() => {
+                            dispatch(setActiveTabs(elem))
+                        }}
+                    >
+                        {elem}
+                    </button>
+                )
+            })}
+        </div>
+    )
+}
+
+export default Tabs

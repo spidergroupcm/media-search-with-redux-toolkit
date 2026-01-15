@@ -1,53 +1,39 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setQuery } from "../redux/fetchers/searchClice";
-
-
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setQuery } from '../redux/features/searchSlice'
 
 const SearchBar = () => {
-  const dispatch = useDispatch()
 
-  const [searchValue, setSearchValue] = useState("")
+    const [text, setText] = useState('')
 
+    const dispatch = useDispatch()
 
-   const submitHandler = (e) => {
-    e.preventDefault()
+    const submitHandler = (e) => {
+        e.preventDefault()
+        dispatch(setQuery(text))
+        setText('')
+    }
 
-    dispatch(setQuery(searchValue))
-    console.log(searchValue)
-    setSearchValue("")
-   }
-  return (
+    return (
+        <div>
+            <form onSubmit={(e) => {
+                submitHandler(e)
+            }} className='flex  bg-(--c1) gap-5 py-10 px-10'>
 
+                <input
+                    value={text}
+                    onChange={(e) => {
+                        setText(e.target.value)
+                    }}
+                    required
+                    className='w-full border-2 px-6 py-3 text-xl rounded outline-none'
+                    type="text"
+                    placeholder='Search anything...' />
 
-    <div>
-      <form
-      onSubmit={(e)=>{
-        submitHandler(e)
-      }}>
-      <div className="flex justify-center items-center gap-3 p-5">
-      <input
-      required
-      className=" w-full border-2 px-4 py-2 outline-none rounded text-xl"
-      value={searchValue}
-      type="text"
-      onChange={(e)=>{
-        setSearchValue(e.target.value)
-      }}
-      placeholder="Search here ......" />
+                <button className='active:scale-95 cursor-pointer border-2 px-6 py-3 text-xl rounded outline-none'>Search</button>
+            </form>
+        </div>
+    )
+}
 
-
-      <button
-
-      className=" active:scale-85 cursor-pointer hover:bg-green-400 border-2 rounded texl-xl px-4 py-2">
-      Search
-      </button>
-
-
-      </div>
-      </form>
-    </div>
-  );
-};
-
-export default SearchBar;
+export default SearchBar

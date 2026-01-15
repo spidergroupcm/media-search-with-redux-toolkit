@@ -1,31 +1,23 @@
 
-import ResultGrid from "./components/ResultGrid";
-import SearchBar from "./components/SearchBar";
-import Tabs from "./components/Tabs";
+import Navbar from "./components/Navbar";
+import { Route, Routes } from 'react-router-dom'
+import CollectionPage from "./pages/CollectionPage";
+import HomePage from "./pages/HomePage";
+import { ToastContainer } from 'react-toastify';
+  
 
 const App = () => {
   return (
-    <div className="p-3">
+   <div className="min-h-screen text-white w-full bg-gray-950">
 
+      <Navbar/>
+     
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/collection' element={<CollectionPage />} />
+      </Routes>
 
-      <SearchBar/>
-      <Tabs/>
-      <ResultGrid/>
-
-
-
-
-      {/* <button className="bg-yellow-500 px-4 py-2 font-bold ml-[px] mt-5" onClick={()=>{
-        fetchPhoto('cat')
-      }}>Fetch Data</button>
-
-      <button className="bg-yellow-500 px-4 py-2 font-bold ml-[px] mt-5" onClick={()=>{
-        fetchVideo('cat')
-      }}>Fetch Video</button>
-
-       <button className="bg-yellow-500 px-4 py-2 font-bold ml-[px] mt-5" onClick={()=>{
-        fetchGif('cat')
-      }}>Fetch GIF</button> */}
+      <ToastContainer />
 
 
     </div>
